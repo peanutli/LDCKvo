@@ -15,6 +15,7 @@
 		659656D52265CF7600DCFCD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 659656D42265CF7600DCFCD0 /* main.m */; };
 		659656DF2265CF7700DCFCD0 /* LDCKvoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 659656DE2265CF7700DCFCD0 /* LDCKvoTests.m */; };
 		659656EA2265CF7700DCFCD0 /* LDCKvoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 659656E92265CF7700DCFCD0 /* LDCKvoUITests.m */; };
+		659656F92265D0F200DCFCD0 /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 659656F82265D0F200DCFCD0 /* NSObject+KVO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		659656E52265CF7700DCFCD0 /* LDCKvoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LDCKvoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		659656E92265CF7700DCFCD0 /* LDCKvoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDCKvoUITests.m; sourceTree = "<group>"; };
 		659656EB2265CF7700DCFCD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		659656F72265D0F200DCFCD0 /* NSObject+KVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVO.h"; sourceTree = "<group>"; };
+		659656F82265D0F200DCFCD0 /* NSObject+KVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVO.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				659656C62265CF7400DCFCD0 /* AppDelegate.m */,
 				659656C82265CF7400DCFCD0 /* ViewController.h */,
 				659656C92265CF7400DCFCD0 /* ViewController.m */,
+				659656F72265D0F200DCFCD0 /* NSObject+KVO.h */,
+				659656F82265D0F200DCFCD0 /* NSObject+KVO.m */,
 				659656CB2265CF7400DCFCD0 /* Main.storyboard */,
 				659656CE2265CF7600DCFCD0 /* Assets.xcassets */,
 				659656D02265CF7600DCFCD0 /* LaunchScreen.storyboard */,
@@ -262,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659656F92265D0F200DCFCD0 /* NSObject+KVO.m in Sources */,
 				659656CA2265CF7400DCFCD0 /* ViewController.m in Sources */,
 				659656D52265CF7600DCFCD0 /* main.m in Sources */,
 				659656C72265CF7400DCFCD0 /* AppDelegate.m in Sources */,

@@ -12,13 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Person : NSObject
 
-- (Person *(^)(NSString *))study;
-
-- (Person *(^)())toGetUp;
-- (Person *(^)())toBreakfast;
-- (Person *(^)())toHaveLunch;
-- (Person *(^)())toHaveDinner;
-- (Person *(^)())toSleep;
+- (void)studentDay;
 
 @end
 

@@ -25,14 +25,8 @@
     
     Person * p = [[Person alloc] init];
     
-    p.toGetUp()
-        .toBreakfast()
-            .study(@"语文")
-                .toHaveLunch()
-                    .study(@"数学")
-                        .toHaveDinner()
-                            .study(@"英语")
-                                    .toSleep();
+    [p studentDay];
+   
 
     
     

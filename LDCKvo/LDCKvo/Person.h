@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Person : NSObject
 
 - (void)studentDay;
+- (void)otherday;
 
 @end
 

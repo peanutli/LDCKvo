@@ -53,6 +53,10 @@
     };
 }
 
+- (void)otherday {
+    self.toGetUp()
+    .toSleep();
+}
 
 - (void)studentDay {
     self.toGetUp()
@@ -63,6 +67,7 @@
     .toHaveDinner()
     .study(@"英语")
     .toSleep();
+
 }
 
 @end

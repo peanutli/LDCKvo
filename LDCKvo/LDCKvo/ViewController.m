@@ -25,9 +25,9 @@
     
     Person * p = [[Person alloc] init];
     
-    [p studentDay];
-   
+  //  [p studentDay];
 
+    [p otherday];
     
     
     // Do any additional setup after loading the view, typically from a nib.

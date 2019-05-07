@@ -11,6 +11,8 @@
 #import <objc/message.h>
 
 NSString *const LdcKVOClassPrefix = @"LdcKVOClassPrefix_";
+NSString *const kLdcKVOAssociatedObservers = @"LdcKVOAssociatedObservers";
+
 
 @interface LdcObserverInfo : NSObject
 
@@ -21,6 +23,17 @@ NSString *const LdcKVOClassPrefix = @"LdcKVOClassPrefix_";
 @end
 
 @implementation LdcObserverInfo
+
+- (instancetype)initWithObserver:(NSObject *)observer Key:(NSString *)key block:(LdcObservingBlock)block
+{
+    self = [super init];
+    if (self) {
+        _observer = observer;
+        _key = key;
+        _block = block;
+    }
+    return self;
+}
 
 @end
 
@@ -75,6 +88,21 @@ static void kvo_setter(id self,SEL _cmd,id newValue) {
         .super_class = class_getSuperclass(object_getClass(self))
     };
     
+    // cast our pointer so the compiler won't complain
+    void (*objc_msgSendSuperCasted)(void *, SEL, id) = (void *)objc_msgSendSuper;
+    
+    // call super's setter, which is original class's setter method
+    objc_msgSendSuperCasted(&superclazz, _cmd, newValue);
+    
+    // look up observers and call the blocks
+    NSMutableArray *observers = objc_getAssociatedObject(self, (__bridge const void *)(kLdcKVOAssociatedObservers));
+    for (LdcObserverInfo *each in observers) {
+        if ([each.key isEqualToString:getterName]) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                each.block(self, getterName, oldValue, newValue);
+            });
+        }
+    }
     
 }
 
@@ -111,6 +139,8 @@ static void kvo_setter(id self,SEL _cmd,id newValue) {
         //添加setter方法
         class_addMethod(clazz, setterSelector, (IMP)kvo_setter, types);
     }
+    
+  
 }
 
 

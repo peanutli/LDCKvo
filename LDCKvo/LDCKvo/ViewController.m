@@ -19,18 +19,13 @@
     [super viewDidLoad];
     
     
-    /**
-     *通过block实现函数链式编程
-     */
-    
+   //通过block实现函数链式编程
     Person * p = [[Person alloc] init];
-    
-  //  [p studentDay];
-
-    [p otherday];
+    [p studentDay];
+   // [p otherday];
     
     
-    // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 

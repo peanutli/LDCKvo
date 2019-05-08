@@ -48,6 +48,9 @@
 
 - (Person * _Nonnull (^)(void))toSleep {
     return  ^(){
+        //集合可以去重么  集合可以去重，但是集合的存储是无序的
+        NSSet * set = [[NSSet alloc]initWithObjects:@"1",@"2",@"3",@"4",@"2",@"2",@"3", nil];
+        NSLog(@"====:%@",set);
          NSLog(@"去睡觉");
         return self;
     };

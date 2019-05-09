@@ -79,6 +79,15 @@ sumE { (a) -> String in
 }
 
 /**-----------------------**/
+typealias blcok3 = (String)->String
+func sumF(a:blcok3) -> (String) {
+    return"Hello-" + a("FFF")
+}
+
+print(sumF { (a) -> String in
+    return a + "-100"
+})
+
 
 /**-----------------------**/
 /**-----------------------**/

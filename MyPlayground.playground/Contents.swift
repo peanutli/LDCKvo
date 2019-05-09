@@ -68,6 +68,15 @@ sumD { (a) in
 }
 
 /**-----------------------**/
+typealias block2 = (String) -> String
+func sumE(a:block2) {
+    let blockResult = a("XXXXX")
+    print(blockResult)
+}
+
+sumE { (a) -> String in
+    return a + "100"
+}
 
 /**-----------------------**/
 

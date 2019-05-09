@@ -45,8 +45,9 @@ print(sumB(a: 100))
 
 /**-----------------------**/
 func sumC(a:(String)->Void) {
+    let str = "真的太绕了，为什么这么说呢，因为这个值是在block里面打印出来的"
     print("efg")
-    a("真的太绕了，为什么这么说呢，因为这个值是在block里面打印出来的")
+    a(str)
 }
 
 
@@ -58,7 +59,8 @@ sumC { (a) in
 typealias block1 = (String)->Void
 func sumD(a:block1) {
     print("sumD")
-    a("怎么的呢")
+    let str = "怎么的呢"
+    a(str)
 }
 
 sumD { (a) in

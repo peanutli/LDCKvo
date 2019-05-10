@@ -73,7 +73,88 @@ print("square.origin is now at (\(squar.center.x), \(squar.center.y))")    //计
 let initialSquareCenter = squar.center
 squar.center = Point(x: 15.0, y: 15.0)
 print("square.origin is now at (\(squar.origin.x), \(squar.origin.y))")
-//属性观察器
+
+//只读计算属性
+struct Cuboid {
+    var width = 0.0 , height = 0.0 , dept = 0.0
+    var volume:Double {
+        return width * height * dept
+    }
+}
+let fourByFiveByTwo = Cuboid(width: 4.0, height: 5.0, dept: 2.0)
+print("the volume of fourByFiveByTwo is \(fourByFiveByTwo.volume)")
+//属性观察器  感觉跟oc的kvo有点像 但是又不太一样
+
+//全局变量和局部变量
+
+//实例属性相当于 静态常量   某个类型，所有实例，共享数据 用static 关键字来定义类型属性
+struct SomeStructure {
+    static var storedTypeProperty = "Some value."
+    static var computedTypeProperty :Int{  //只读属性
+        return 1
+    }
+}
+
+enum SomeEnumeration {
+    static var storedTypeProperty = "Some value."
+    static var computedTypeProperty : Int{
+        return 6
+    }
+}
+
+class SomeClass {
+    static var storedTypeProperty = "Some value."
+    static var computedTypeProperty : Int{
+        return 27
+    }
+    class var overrideableComputedTypeProperty: Int {   //不知道这个是啥意思
+        return 107
+    }
+}
+
+//类型属性是通过类型本身来访问，不是通过类
+print("================================")
+print(SomeEnumeration.storedTypeProperty)
+SomeEnumeration.storedTypeProperty = "Another value."
+print(SomeEnumeration.storedTypeProperty)
+print(SomeEnumeration.computedTypeProperty)
+print(SomeClass.computedTypeProperty)
+
+
+struct AudioChannel{
+    static let thresholdLevel = 10
+    static var maxInputLevelForAllChannels = 0
+    
+    var currentLevel : Int = 0{
+        didSet {
+            if currentLevel > AudioChannel.thresholdLevel {
+                // 将当前音量限制在阈值之内
+                currentLevel = AudioChannel.thresholdLevel
+            }
+            if currentLevel > AudioChannel.maxInputLevelForAllChannels {
+                // 存储当前音量作为新的最大输入音量
+                AudioChannel.maxInputLevelForAllChannels = currentLevel
+            }
+        }
+    }
+}
+
+var leftChannel = AudioChannel()
+var rightChannel = AudioChannel()
+
+leftChannel.currentLevel = 7
+print(leftChannel.currentLevel)
+// 输出“7”
+print(AudioChannel.maxInputLevelForAllChannels)
+// 输出“7”
+
+rightChannel.currentLevel = 11
+print(rightChannel.currentLevel)
+// 输出“10”
+print(AudioChannel.maxInputLevelForAllChannels)
+// 输出“10”
+
+
 /**
  *{}
  */

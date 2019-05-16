@@ -13,7 +13,7 @@ PromiseKit
  
     Promise.swift
  
-    Promise <T>   ----  <T> 代表的是 什么呢？
+ Promise <T>   ----  <T> 代表的是 什么呢？  T代表 : 元组 Result 是枚举
  
  
 
@@ -87,7 +87,35 @@ URLSession.shared.dataTask(with: request) {
  *用泛型，将可能的返回值包装起来 因为无非是成功失败二选一，所以借此把不必要的可选值去掉。
  */
 
-enum Result<T,E:Error> {
+enum Result<T,E:URLResponse> {
     case successful(T)
     case failure(E)
 }
+
+/*
+ *把泛型用在包装 URLSession 上试一试
+ *不知道为什么写下面代码的时候，没有提示
+ *猫神说 response 无论 failure 还是  success 都会返回的 所以 Result这个枚举 里面的元组，进行了修改
+ */
+extension URLSession {
+    func dataTask(with request:URLRequest,completionHandler:@escaping (Result<(Data,URLResponse),URLResponse>) -> Void) -> URLSessionDataTask {
+        return dataTask(with: request) {
+            data,response,error in
+                if error != nil {
+                    completionHandler(.failure(response!))
+                }
+                else {
+                    completionHandler(.successful((data!,response!)))
+            }
+        }
+    }
+}
+
+/*
+ *调用试试
+ *枚举 + 元组 的这种方式，参数调用不会写
+ */
+
+
+
+

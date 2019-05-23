@@ -28,7 +28,12 @@
 }
 //读取
 - (id)ldcValueForKey:(NSString *)key{
-    return [self.dataDic objectForKey:key];
+    if (![self.dataDic objectForKey:key]){
+        if ([self.plistManager ldcValueForKey:key]) {
+            [self.dataDic setObject:[self.plistManager ldcValueForKey:key] forKey:key];
+        }
+    }
+    return  [self.dataDic objectForKey:key];;
 }
 //修改
 - (void)modifiValue:(id)value ForKey:(NSString *)key{
@@ -39,6 +44,7 @@
     [self.dataDic removeAllObjects];
 }
 
+//同步
 - (void)synchronsize {
     [self.plistManager synchronsize:self.dataDic];
 }

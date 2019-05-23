@@ -40,6 +40,10 @@
     [self.writeManager resetLdcUserDefault];
 }
 
+- (void)synchronsize {
+    [self.writeManager synchronsize];
+}
+
 
 #pragma mark --- setter and getter
 

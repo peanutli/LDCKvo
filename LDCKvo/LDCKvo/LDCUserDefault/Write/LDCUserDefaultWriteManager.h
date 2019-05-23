@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeLdcValueForKey:(NSString *)key;
 - (void)resetLdcUserDefault;
 - (void)modifiValue:(id)value forKey:(NSString*)key;
+- (void)synchronsize;
 
 @end
 

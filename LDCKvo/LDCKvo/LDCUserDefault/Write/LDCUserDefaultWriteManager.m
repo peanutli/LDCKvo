@@ -51,6 +51,10 @@
     [self.cacheManager modifiValue:value ForKey:key];
 }
 
+- (void)synchronsize {
+    [self.cacheManager synchronsize];
+}
+
 #pragma mark ---- setter and getter
 
 //- (LdcUserDefalutPlistManager *)plistManager {
@@ -68,5 +72,7 @@
     _cacheManager = [[LDCUserDefaultCacheManager alloc] init];
     return _cacheManager;
 }
+
+
 
 @end

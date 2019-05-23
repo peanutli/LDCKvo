@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		651082172296833F00D43B66 /* LDCUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 651082162296833F00D43B66 /* LDCUserDefault.m */; };
+		6510821C229683AA00D43B66 /* LDCUserDefaultWriteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6510821B229683AA00D43B66 /* LDCUserDefaultWriteManager.m */; };
+		6510821F229683C000D43B66 /* LDCUserDefaultReadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6510821E229683C000D43B66 /* LDCUserDefaultReadManager.m */; };
+		651082232296893B00D43B66 /* LdcUserDefalutPlistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 651082222296893B00D43B66 /* LdcUserDefalutPlistManager.m */; };
+		65108225229689C400D43B66 /* LDCUserDefault.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65108224229689C400D43B66 /* LDCUserDefault.plist */; };
 		659656C72265CF7400DCFCD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 659656C62265CF7400DCFCD0 /* AppDelegate.m */; };
 		659656CA2265CF7400DCFCD0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659656C92265CF7400DCFCD0 /* ViewController.m */; };
 		659656CD2265CF7400DCFCD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659656CB2265CF7400DCFCD0 /* Main.storyboard */; };
@@ -37,6 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		651082152296833F00D43B66 /* LDCUserDefault.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDCUserDefault.h; sourceTree = "<group>"; };
+		651082162296833F00D43B66 /* LDCUserDefault.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDCUserDefault.m; sourceTree = "<group>"; };
+		6510821A229683AA00D43B66 /* LDCUserDefaultWriteManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDCUserDefaultWriteManager.h; sourceTree = "<group>"; };
+		6510821B229683AA00D43B66 /* LDCUserDefaultWriteManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDCUserDefaultWriteManager.m; sourceTree = "<group>"; };
+		6510821D229683C000D43B66 /* LDCUserDefaultReadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDCUserDefaultReadManager.h; sourceTree = "<group>"; };
+		6510821E229683C000D43B66 /* LDCUserDefaultReadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDCUserDefaultReadManager.m; sourceTree = "<group>"; };
+		651082212296893B00D43B66 /* LdcUserDefalutPlistManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LdcUserDefalutPlistManager.h; sourceTree = "<group>"; };
+		651082222296893B00D43B66 /* LdcUserDefalutPlistManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LdcUserDefalutPlistManager.m; sourceTree = "<group>"; };
+		65108224229689C400D43B66 /* LDCUserDefault.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LDCUserDefault.plist; sourceTree = "<group>"; };
 		659656C22265CF7400DCFCD0 /* LDCKvo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LDCKvo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		659656C52265CF7400DCFCD0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		659656C62265CF7400DCFCD0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -84,6 +98,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		651082142296830300D43B66 /* LDCUserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				651082202296891600D43B66 /* Plist */,
+				651082192296835600D43B66 /* Write */,
+				651082182296834E00D43B66 /* Read */,
+				651082152296833F00D43B66 /* LDCUserDefault.h */,
+				651082162296833F00D43B66 /* LDCUserDefault.m */,
+			);
+			path = LDCUserDefault;
+			sourceTree = "<group>";
+		};
+		651082182296834E00D43B66 /* Read */ = {
+			isa = PBXGroup;
+			children = (
+				6510821D229683C000D43B66 /* LDCUserDefaultReadManager.h */,
+				6510821E229683C000D43B66 /* LDCUserDefaultReadManager.m */,
+			);
+			path = Read;
+			sourceTree = "<group>";
+		};
+		651082192296835600D43B66 /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				6510821A229683AA00D43B66 /* LDCUserDefaultWriteManager.h */,
+				6510821B229683AA00D43B66 /* LDCUserDefaultWriteManager.m */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
+		651082202296891600D43B66 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				651082212296893B00D43B66 /* LdcUserDefalutPlistManager.h */,
+				651082222296893B00D43B66 /* LdcUserDefalutPlistManager.m */,
+				65108224229689C400D43B66 /* LDCUserDefault.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
 		659656B92265CF7400DCFCD0 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +161,7 @@
 		659656C42265CF7400DCFCD0 /* LDCKvo */ = {
 			isa = PBXGroup;
 			children = (
+				651082142296830300D43B66 /* LDCUserDefault */,
 				659656C52265CF7400DCFCD0 /* AppDelegate.h */,
 				659656C62265CF7400DCFCD0 /* AppDelegate.m */,
 				659656C82265CF7400DCFCD0 /* ViewController.h */,
@@ -246,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				659656D22265CF7600DCFCD0 /* LaunchScreen.storyboard in Resources */,
+				65108225229689C400D43B66 /* LDCUserDefault.plist in Resources */,
 				659656CF2265CF7600DCFCD0 /* Assets.xcassets in Resources */,
 				659656CD2265CF7400DCFCD0 /* Main.storyboard in Resources */,
 			);
@@ -273,9 +329,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				659656F92265D0F200DCFCD0 /* NSObject+KVO.m in Sources */,
+				6510821C229683AA00D43B66 /* LDCUserDefaultWriteManager.m in Sources */,
 				659656CA2265CF7400DCFCD0 /* ViewController.m in Sources */,
 				65D50DCD228174EC001D6E35 /* Person.m in Sources */,
+				651082232296893B00D43B66 /* LdcUserDefalutPlistManager.m in Sources */,
+				6510821F229683C000D43B66 /* LDCUserDefaultReadManager.m in Sources */,
 				659656D52265CF7600DCFCD0 /* main.m in Sources */,
+				651082172296833F00D43B66 /* LDCUserDefault.m in Sources */,
 				659656C72265CF7400DCFCD0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

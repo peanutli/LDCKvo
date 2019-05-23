@@ -64,6 +64,12 @@
     [self saveDataPlist];
 }
 
+//同步data到plist文件
+- (void)synchronsize:(NSDictionary *)dataDic {
+    [self.defaultDictionary setValuesForKeysWithDictionary:dataDic];
+    [self saveDataPlist];
+}
+
 #pragma  mark --- setter and getter
 - (NSString *)defaultPath {
     return [LdcUserDefalutPlistManager fullPathForDirectoriesInDomains];

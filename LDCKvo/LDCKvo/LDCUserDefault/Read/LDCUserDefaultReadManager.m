@@ -8,10 +8,12 @@
 
 #import "LDCUserDefaultReadManager.h"
 #import "LdcUserDefalutPlistManager.h"
+#import "LDCUserDefaultCacheManager.h"
 
 @interface LDCUserDefaultReadManager()
 
 @property (nonatomic,strong) LdcUserDefalutPlistManager * plistManager;
+@property (nonatomic,strong) LDCUserDefaultCacheManager * cahceManager;
 
 @end
 
@@ -28,6 +30,14 @@
     }
     _plistManager = [[LdcUserDefalutPlistManager alloc] init];
     return _plistManager;
+}
+
+- (LDCUserDefaultCacheManager *)cahceManager {
+    if (_cahceManager) {
+        return _cahceManager;
+    }
+    _cahceManager = [[LDCUserDefaultCacheManager alloc] init];
+    return _cahceManager;
 }
 
 @end

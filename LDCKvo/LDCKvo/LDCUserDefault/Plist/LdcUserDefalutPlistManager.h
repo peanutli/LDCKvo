@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)modifiValue:(id)value ForKey:(NSString *)key;
 //全部删除清空
 - (void)resetLdcUserDefault;
+//同步data到plist文件
+- (void)synchronsize:(NSDictionary *)dataDic;
 
 @end
 

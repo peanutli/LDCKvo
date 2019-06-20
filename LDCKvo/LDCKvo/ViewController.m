@@ -50,6 +50,16 @@
     
     [userDefault setLdcValue:@"123" forKey:@"hello"];
     
+    //block 无法修改变量值
+    
+   __block int a = 10;
+    typedef void (^Block)(void);
+    Block block = ^(){
+        NSLog(@"!!!!!!!!!%d",a);
+    };
+    a = 11;
+    block();
+    
 }
 
 
